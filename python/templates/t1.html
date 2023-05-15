@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.js"></script>
+</head>
+
+<body>
+    <h2>Demo of SocketIO</h2>
+    <button id="btn1" type="button" class="btn btn-primary">点击发送信息</button>
+    <br>
+    <p id="t1">接收dcenter事件信息
+    <p id="t2"></p>
+    </p>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            namespace = '/dcenter';
+            // var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
+            var socket = io.connect(namespace)
+            // 注册一个dcenter 事件（后端发送信息时要添加dcenter事件名称），等待前端发送信息
+            socket.on('dcenter1', function (res) {
+                var t = JSON.stringify(res);
+                if (t) {
+                    $("#t2").append(t).append('<br/>');
+                }
+            });
+
+            // socket.io 固有事件：连接成功后执行该函数。
+            socket.on('connect', function () {
+                console.log('connect')
+            });
+            // socket.io 固有事件：连接错误触发事件处理器。
+            socket.on('connect_error', (error) => {
+                // ...
+                console.log("connect_error")
+                // socket.close();
+            });
+            // socket.io 固有事件：丢失连接时触发时间处理器
+            socket.on('disconnect', (timeout) => {
+                // ...
+                console.log('disconnect')
+                socket.close();  // 关闭连接
+            });
+            // 点击按钮发送一个my_event的消息，后端会接收，然后后端会发送一个dcenter1 信息
+            $("#btn1").click(function () {
+                socket.emit('my_event', { '你好': "世界！" })
+            })
+        });
+    </script>
+</body>
+
+</html>

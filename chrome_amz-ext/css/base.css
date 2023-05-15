@@ -1,0 +1,30 @@
+.ai-amz-summary {
+    background: #8f806d;
+    padding: 3px 10px;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+}
+button.ai-amz-init-btn:disabled {
+    opacity: 1;
+    background: gray;
+    color: red;
+}
+
+.ai-amz-init-btn {
+    font-weight: bold;
+    position: fixed; 
+    top:20px; 
+    right: 20px; 
+    width: 100px; 
+    padding: 5px 20px; 
+    z-index: 100000;
+}
+.ai-amz-bullets-btn {
+    position: fixed; 
+    top:20px; 
+    right: 120px; 
+    width: 100px; 
+    padding: 5px 20px; 
+    z-index: 100000;
+}

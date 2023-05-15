@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>options setting</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    #tab-container {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #f2f2f2;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .content.active {
+      display: block;
+    }
+
+    .content {
+      display: none;
+    }
+  </style>
+  <script src="./js/jquery.js"></script>
+</head>
+<body>
+  <div class="container pt-5">
+    <div id="tab-container">
+      <button type="button" class="btn btn-outline-secondary tab active">review analysis</button>
+      <button type="button" class="btn btn-outline-secondary tab">motivation summary</button>
+      <button type="button" class="btn btn-outline-secondary tab">bullet list writing</button>
+      <button type="button" class="btn btn-outline-secondary tab">coming new</button>
+    </div>
+    <form id="optons-form">
+      <div id="content-wrapper">
+        <div class="content active">
+          <div class="form-group">
+            <div class="form-check-inline">
+              <input type="checkbox" class="form-check-input" name="review" checked>
+              <label class="form-check-label">Review Analysis</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-check-inline">
+              <input id="negative-review" type="radio" class="form-check-input" name="rating" value="1,2" checked>
+              <label for="negative-review" class="form-check-label">Negative review</label>
+            </div>
+            <div class="form-check-inline">
+              <input id="moderate-review" type="radio" class="form-check-input" name="rating" value="3">
+              <label for="moderate-review" class="form-check-label">Moderate review</label>
+            </div>
+            <div class="form-check-inline">
+              <input id="positive-review" type="radio" class="form-check-input" name="rating" value="4,5">
+              <label for="positive-review" class="form-check-label">Positive review</label>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="form-check-inline">
+              <input type="radio" id="reviews-100" class="form-check-input" name="reviews" value="100" checked>
+              <label for="reviews-100" class="form-check-label">100</label>
+            </div>
+            <div class="form-check-inline">
+              <input type="radio" id="reviews-200" class="form-check-input" name="reviews" value="200">
+              <label for="reviews-200" class="form-check-label">200</label>
+            </div>
+            <div class="form-check-inline">
+              <input type="radio" id="reviews-500" class="form-check-input" name="reviews" value="500">
+              <label for="reviews-500" class="form-check-label">500</label>
+            </div>
+            <div class="form-check-inline">
+              <input type="radio" id="reviews-1000" class="form-check-input" name="reviews" value="1000">
+              <label for="reviews-1000" class="form-check-label">1000</label>
+            </div>
+            <div class="form-check-inline">
+              <input type="radio" id="reviews-2000" class="form-check-input" name="reviews" value="2000">
+              <label for="reviews-2000" class="form-check-label">2000</label>
+            </div>
+            <div class="form-check-inline">
+              <input type="radio" id="reviews-3000" class="form-check-input" name="reviews" value="3000">
+              <label for="reviews-3000" class="form-check-label">3000</label>
+            </div>
+            <div class="form-check-inline">
+              <input type="radio" id="reviews-4000" class="form-check-input" name="reviews" value="4000">
+              <label for="reviews-4000" class="form-check-label">4000</label>
+            </div>
+          </div>
+          
+        </div>
+        <div class="content">
+          <!-- <div class="form-group">
+            <div class="form-check-inline">
+              <input type="checkbox" class="form-check-input" name="question" />
+              <label class="form-check-label">ask & answer</div>
+      </div>
+      <div class="form-group">
+        <div class="form-check-inline">
+          <input type="radio" class="form-check-input" name="qna" value="200" checked>
+          <label class="form-check-label">200</label>
+        </div>
+        <div class="form-check-inline">
+          <input type="radio" class="form-check-input" name="qna" value="500">
+          <label class="form-check-label">500</label>
+        </div>
+        <div class="form-check-inline">
+          <input type="radio" class="form-check-input" name="qna" value="1000">
+          <label class="form-check-label">1000</label>
+        </div>
+        <div class="form-check-inline">
+          <input type="radio" class="form-check-input" name="qna" value="2000">
+          <label class="form-check-label">2000</label>
+        </div>
+        <div class="form-check-inline">
+          <input type="radio" class="form-check-input" name="qna" value="10000">
+          <label class="form-check-label">all</label>
+        </div>
+      </div> -->
+      developing...
+    </div>
+    <div class="content">
+      <div class="form-group">
+        <div class="form-check-inline">
+          <input type="checkbox" class="form-check-input" name="bullets">
+          <label class="form-check-label">Bullets List Inspiration</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="product-name">product name</label>
+        <input type="text" id="product-name" name="product">
+      </div>
+      <div class="form-group">
+        <label for="key-words">key words</label>
+        <input type="text" id="key-words" name="kw" placeholder="keyword1;keyword2;keyword3;keyword4">
+      </div>
+      <div class="form-group">
+        <label for="brand-name">brand</label>
+        <input type="text" id="brand-name" name="brand">
+      </div>
+    </div>
+    <div class="content">
+      <p>coming soon</p>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary mx-auto">save</button>
+  </div>
+</form>
+
+</div>
+</body>
+<script src="./js/option.js"></script>
+</html>

@@ -1,0 +1,61 @@
+{
+	
+	"manifest_version": 3,
+	
+	"name": "aiamzplus",
+	
+	"version": "1.0.0",
+	
+	"description": "Amazon page helper",
+	
+	"icons":
+	{
+		"16": "img/icon.jpeg",
+		"48": "img/icon.jpeg",
+		"128": "img/icon.jpeg"
+	},
+
+    "action": {
+            "default_icon": {
+             "16": "img/icon.jpeg",
+                "24": "img/icon.jpeg",
+                "32": "img/icon.jpeg"
+              },
+              "default_title": "My Extension Action Title",
+          "default_popup": "setting.html"
+    },
+	
+	"background": {
+		"service_worker": "js/background.js"
+	},
+	"content_scripts": 
+	[
+		{
+
+			
+			"matches": ["https://www.amazon.com/*"],
+			
+			"js": ["js/jquery.js", "js/xlsx.js", "js/content-creator.js", "js/content-script.js"],
+			
+			"css": ["css/base.css"],
+			
+			"run_at": "document_start"
+		}
+	],
+	
+	"permissions":
+	[
+		"contextMenus", 
+		"tabs", 
+		"notifications", 
+		"webRequest", 
+		"webRequestBlocking",
+		"storage", 
+		"http://*/*", 
+		"https://*/*" 
+	],
+	
+	"homepage_url": "https://www.baidu.com",
+	
+	"options_page": "options.html"
+}
